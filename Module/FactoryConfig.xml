@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Configuration>
+    <Base>
+      <Folder>
+        <FactoryRoot>".\"</FactoryRoot>
+        <BaseRoot>.\Base</BaseRoot>
+        <IsoRoot>".\ISOs"</IsoRoot>
+        <ResourceRoot>".\Resources"</ResourceRoot>
+        <ShareRoot>".\Shared" </ShareRoot>
+      </Folder>
+      <OsSetup>
+        <Organization>"The Power Elite"</Organization>
+        <Owner>"Karl Fleischmann"</Owner>
+        <Timezone>"Eastern Standard Time"</Timezone>
+        <AdminPassword>"P@ssw0rd"</AdminPassword>
+        <UserPassword>"P@ssw0rd"</UserPassword>
+      </OsSetup>
+      <Misc>
+        <StartFactory>true</StartFactory>
+        <CleanWinSXS>false</CleanWinSXS>
+        <LegacyVHD>false</LegacyVHD>
+      </Misc>
+    </Base>
+    <!-- Settings for the temporary VM created by the factory when processing each base image -->
+    <FactoryVM Name="Factory VM" Memory="3072mb"
+               ProcessorCount="2" SwitchName="Default Switch"
+               UseVlan="false" VlanId="1" UseStaticIP="false">
+      <StaticIP>
+        <IP>10.10.10.10</IP>
+        <MaskBits>24</MaskBits>
+        <Gateway>10.10.10.1</Gateway>
+        <DNS>10.10.10.2</DNS>
+        <IPType>IPv4</IPType>
+      </StaticIP>
+    </FactoryVM>
+</Configuration>
